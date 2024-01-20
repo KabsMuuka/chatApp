@@ -1,6 +1,15 @@
-import { initialzeApp } from "firebase/app"; //initalizer
-import { getAuth } from "firebase/auth"; //auth
-import { collection } from "firebase/firestore"; //database
+import { initializeApp } from "firebase/app"; //initalizer
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth"; //auth
+import { collection, getFirestore, orderBy, query } from "firebase/firestore"; //database
+
+//importing hooks from that will make firebase possible to work with react
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useCollectionData } from "react-firebase-hooks/firestore";
+
+//IMPORTS FROM COMPONENET
+import Signin from "../conmponents/Signin";
+import SignOut from "../conmponents/Signout";
+import ChatRoom from "../conmponents/ChatRoom";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD8i19mGZh7ZVqv5e5D7bHgrWECVO6e2go",
@@ -12,11 +21,29 @@ const firebaseConfig = {
   measurementId: "G-8DJMD56PHS",
 };
 //initialize Firebase
-const app = initialzeApp(firebaseConfig);
-const auth = getAuth();
+const firebaseApp = initializeApp(firebaseConfig);
+const auth = getAuth(firebaseApp);
 
-function App() {
-  return <></>;
-}
+export default function App() {
+  const [user] = useAuthState(auth); // represents the current authentication state of the user
+  return (
+    <>
+      <h1>Sagita </h1>
+      <div>
+        <header>
+          <section>
+            {" "}
+            <SignOut />{" "}
+          </section>
+        </header>
 
-export default App;
+        <div>
+          {/* if user is authenticated show chatRoom otherwise show signIn */}
+          <section> {user ? <ChatRoom /> : <Signin />} </section>
+        </div>
+      </div>
+    </>
+  );
+
+  <ChatRoom />;
+} //all functions should be inside this cury bress

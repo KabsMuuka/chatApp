@@ -1,6 +1,6 @@
 # This is a real time chat app, with secure google authentication.
 
-img src="./public/chatPreview.png"
+<img src="./public/chatPreview.png"/>
 ...
 Tools i used
 framework react,

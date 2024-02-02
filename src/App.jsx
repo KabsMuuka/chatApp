@@ -26,12 +26,9 @@ export default function App() {
 
   return (
     <>
-      <h1>Sagita </h1>
-      <div>
+      <div className="App">
         <header>
-          <section>
-            <SignOut />
-          </section>
+          <SignOut />
         </header>
         <div>
           <section> {user ? <ChatRoom /> : <Signin />} </section>

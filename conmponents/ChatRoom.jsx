@@ -66,7 +66,10 @@ export default function ChatRoom() {
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
         />
-        <button type="submit"> SendMessage </button>
+        <button type="submit">
+          {" "}
+          <img src="./public/send-message.png" alt="" />{" "}
+        </button>
       </form>
     </>
   );
@@ -79,9 +82,14 @@ export default function ChatRoom() {
     return (
       <>
         <div className={`message ${messageClass}`}>
-          <span> {displaySenderName} </span>
-          <p> {text} </p>
-          <span> {createdAt && createdAt.toDate().toLocaleString()} </span>{" "}
+          <p>
+            <span className="senderName"> {displaySenderName} </span> <br />
+            {text}{" "}
+          </p>
+          <span className="timeStamp">
+            {" "}
+            {createdAt && createdAt.toDate().toLocaleString()}{" "}
+          </span>{" "}
         </div>
       </>
     );

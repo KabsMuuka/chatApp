@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-
+import Footer from "../conmponents/Footer";
 const firebaseConfig = {
   apiKey: "AIzaSyA9XTWy8rBAYYM-BMWTVlJYmp0ieaCliI0",
   authDomain: "sagita-ffcc5.firebaseapp.com",

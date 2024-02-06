@@ -15,7 +15,7 @@ body {
   height: 10vh;
   min-height: 50px;
   color: white;
-  position: fixed;
+  position: static;
   width: 100%;
   max-width: 728px;
   top: 0;
@@ -37,6 +37,7 @@ body {
 }
 
 .Note {
+  margin: 50px;
   color: white;
 }
 
@@ -116,7 +117,6 @@ input {
 .signInButton {
   display: flex;
   justify-content: center;
-  margin: 50%;
 }
 
 button:disabled {

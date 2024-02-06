@@ -59,7 +59,6 @@ export default function ChatRoom() {
         {messages &&
           messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
       </div>
-
       <form onSubmit={sendMessage}>
         <input
           type="text"
@@ -68,7 +67,7 @@ export default function ChatRoom() {
         />
         <button type="submit">
           {" "}
-          <img src="./public/send-message.png" alt="" />{" "}
+          <img src="/send-message.png" alt="" />{" "}
         </button>
       </form>
     </>

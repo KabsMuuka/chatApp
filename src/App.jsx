@@ -7,7 +7,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import Signin from "../conmponents/Signin";
 import SignOut from "../conmponents/Signout";
 import ChatRoom from "../conmponents/ChatRoom";
-
+import Header from "../conmponents/Header";
 const firebaseConfig = {
   apiKey: "AIzaSyA9XTWy8rBAYYM-BMWTVlJYmp0ieaCliI0",
   authDomain: "sagita-ffcc5.firebaseapp.com",
@@ -29,6 +29,7 @@ export default function App() {
       <div className="App">
         <header>
           <SignOut />
+          {/* <Header /> */}
         </header>
         <div>
           <section> {user ? <ChatRoom /> : <Signin />} </section>

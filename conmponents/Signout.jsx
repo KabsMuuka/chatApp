@@ -18,7 +18,7 @@ export default function SignOut() {
     auth.currentUser && (
       <div className="signOutBtnDiv">
         <button className="signOutBtn" onClick={() => auth.signOut()}>
-          <img src="/public/logout.png" alt="" />
+          Quit
         </button>
       </div>
     )

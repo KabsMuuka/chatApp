@@ -27,10 +27,7 @@ export default function App() {
   return (
     <>
       <div className="App">
-        <header>
-          <SignOut />
-          {/* <Header /> */}
-        </header>
+        <header>{user ? <Header /> : " "}</header>
         <div>
           <section> {user ? <ChatRoom /> : <Signin />} </section>
         </div>

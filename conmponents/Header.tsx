@@ -8,14 +8,37 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import SignOut from "./Signout";
 
-const pages = [<SignOut />];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+import { initializeApp } from "firebase/app"; //initalizer
+import { getAuth } from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA9XTWy8rBAYYM-BMWTVlJYmp0ieaCliI0",
+  authDomain: "sagita-ffcc5.firebaseapp.com",
+  projectId: "sagita-ffcc5",
+  storageBucket: "sagita-ffcc5.appspot.com",
+  messagingSenderId: "518705465297",
+  appId: "1:518705465297:web:b2d7fc27e97d53457b42f0",
+  measurementId: "G-58BQEDNG27",
+};
+//initialize Firebase
+const firebaseApp = initializeApp(firebaseConfig);
+const auth = getAuth(firebaseApp);
+
+/*note that using the index as the key is not always the best solution, 
+especially if your list items can be reordered,
+ added, 
+ or removed dynamically */
+const settings = [
+  "Profile",
+  "Account",
+  "Dashboard",
+  <a className="Links" onClick={() => auth.signOut()}>
+    Logout
+  </a>,
+];
 
 function ResponsiveAppBar() {
   type anchorElement = HTMLElement | null;
@@ -48,7 +71,7 @@ function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            // href="Sagita"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -94,11 +117,11 @@ function ResponsiveAppBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
+              {/* {pages.map((page) => (
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
-              ))}
+              ))} */}
             </Menu>
           </Box>
 
@@ -124,14 +147,14 @@ function ResponsiveAppBar() {
             />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {/* {pages.map((page) => (
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "black", display: "block" }}
               >
                 {page}
               </Button>
-            ))}
+            ))} */}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -156,8 +179,8 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+              {settings.map((setting, index) => (
+                <MenuItem key={index} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

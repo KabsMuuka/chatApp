@@ -57,7 +57,9 @@ export default function ChatRoom() {
              For each iteration, it executes the provided function, which returns a ChatMessage component.
              The key={msg.id} prop is used to uniquely identify each ChatMessage */}
         {messages &&
-          messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
+          messages.map((msg, index) => (
+            <ChatMessage key={index} message={msg} />
+          ))}
       </div>
       <form onSubmit={sendMessage}>
         <input

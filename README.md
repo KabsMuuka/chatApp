@@ -6,6 +6,8 @@ Login page
 Internal functionalities
 <img src="./public/app.png"/>
 
+drop down menu
+<img src="./public/dropdown.png"/>
 ...
 Tools i used
 framework react,

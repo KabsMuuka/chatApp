@@ -11,8 +11,7 @@ body {
 }
 
 .App header {
-  height: 10vh;
-  min-height: 50px;
+  border-radius: 5px;
   color: white;
   position: fixed;
   width: 100%;
@@ -123,11 +122,6 @@ input {
   justify-content: center;
 }
 
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
 .sign-in {
   color: #282c34;
   background: white;
@@ -213,9 +207,23 @@ p {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-img {
+.micro-img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin: 2px 5px;
+}
+
+.profile-grid-container {
+  display: grid;
+  grid-template-rows: auto;
+  background-color: #e5e5ea;
+  padding: 10px;
+}
+.grid-content {
+  background-color: #00ddeb;
+  border: 1px solid rgba(105, 82, 82, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
 }

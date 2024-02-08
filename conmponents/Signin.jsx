@@ -17,6 +17,8 @@ export default function Signin() {
   const signInWithGoogle = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider);
+
+    console.log("working ?");
   };
 
   return (

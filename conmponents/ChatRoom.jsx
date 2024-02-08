@@ -69,7 +69,7 @@ export default function ChatRoom() {
         />
         <button type="submit">
           {" "}
-          <img src="/send-message.png" alt="" />{" "}
+          <img className="micro-img" src="/send-message.png" alt="" />{" "}
         </button>
       </form>
     </>

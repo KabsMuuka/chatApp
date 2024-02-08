@@ -13,6 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 
 import { initializeApp } from "firebase/app"; //initalizer
 import { getAuth } from "firebase/auth";
+import { Link } from "react-router-dom";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA9XTWy8rBAYYM-BMWTVlJYmp0ieaCliI0",
@@ -32,9 +33,10 @@ especially if your list items can be reordered,
  added, 
  or removed dynamically */
 const settings = [
-  "Profile",
+  <Link to="/Profile"> Profile </Link>,
   "Account",
-  "Dashboard",
+  <Link to="/ChatRoom"> ChatRoom </Link>,
+  ,
   <a className="Links" onClick={() => auth.signOut()}>
     Logout
   </a>,
@@ -83,6 +85,7 @@ function ResponsiveAppBar() {
             }}
           >
             <img
+              className="micro-img"
               src="/robot.png"
               title="Hello Stranger! I'm here to help you with anything you need!"
             />
@@ -142,6 +145,7 @@ function ResponsiveAppBar() {
             }}
           >
             <img
+              className="micro-img"
               src="/robot.png"
               title="Hello Stranger! I'm here to help you with anything you need!"
             />

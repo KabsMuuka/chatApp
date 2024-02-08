@@ -5,9 +5,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 //IMPORTS FROM COMPONENET
 import Signin from "../conmponents/Signin";
-import SignOut from "../conmponents/Signout";
 import ChatRoom from "../conmponents/ChatRoom";
 import Header from "../conmponents/Header";
+import Profile from "../conmponents/Profile";
+
+import { Routes, Route } from "react-router-dom";
+
 const firebaseConfig = {
   apiKey: "AIzaSyA9XTWy8rBAYYM-BMWTVlJYmp0ieaCliI0",
   authDomain: "sagita-ffcc5.firebaseapp.com",
@@ -27,11 +30,23 @@ export default function App() {
   return (
     <>
       <div className="App">
-        <header>{user ? <Header /> : " "}</header>
-        <div>
+        <header>{user ? <Header /> : ""}</header>
+        <Routes>
+          <Route
+            path="/ChatRoom"
+            element={user ? <ChatRoom /> : <Signin />}
+          ></Route>
+
+          <Route
+            path="/Profile"
+            element={user ? <Profile /> : <Signin />}
+          ></Route>
+        </Routes>
+
+        {/* <div>
           <section> {user ? <ChatRoom /> : <Signin />} </section>
-        </div>
+        </div> */}
       </div>
     </>
   );
-} //all functions should be inside this cury bress
+}

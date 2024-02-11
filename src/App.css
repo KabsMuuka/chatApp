@@ -65,7 +65,7 @@ main::-webkit-scrollbar-thumb {
   background: #6649b8;
 }
 
-form {
+.form-message-space {
   height: 10vh;
   position: fixed;
   bottom: 0;
@@ -76,7 +76,7 @@ form {
   font-size: 1.5rem;
 }
 
-form button {
+.form-message-space button {
   width: 7%;
   border: none;
   cursor: pointer;
@@ -217,11 +217,10 @@ p {
 .profile-grid-container {
   display: grid;
   grid-template-rows: auto;
-  background-color: #e5e5ea;
+  background-color: #373745;
   padding: 10px;
 }
 .grid-content {
-  background-color: #00ddeb;
   border: 1px solid rgba(105, 82, 82, 0.8);
   padding: 20px;
   font-size: 30px;

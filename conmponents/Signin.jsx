@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-import Footer from "../conmponents/Footer";
+import { useNavigate } from "react-router-dom";
+import ChatRoom from "./ChatRoom";
+
 const firebaseConfig = {
   apiKey: "AIzaSyA9XTWy8rBAYYM-BMWTVlJYmp0ieaCliI0",
   authDomain: "sagita-ffcc5.firebaseapp.com",
@@ -14,11 +16,13 @@ const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 
 export default function Signin() {
+  const navigate = useNavigate();
+
   const signInWithGoogle = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider);
 
-    console.log("working ?");
+    navigate("/ChatRoom"); //after signing in, navigate to chatRoom
   };
 
   return (

@@ -32,6 +32,8 @@ export default function App() {
       <div className="App">
         <header>{user ? <Header /> : ""}</header>
         <Routes>
+          <Route path="/" element={<Signin />}></Route>
+
           <Route
             path="/ChatRoom"
             element={user ? <ChatRoom /> : <Signin />}
@@ -42,10 +44,6 @@ export default function App() {
             element={user ? <Profile /> : <Signin />}
           ></Route>
         </Routes>
-
-        {/* <div>
-          <section> {user ? <ChatRoom /> : <Signin />} </section>
-        </div> */}
       </div>
     </>
   );

@@ -34,6 +34,7 @@ export default function ChatRoom() {
   const [messages] = useCollectionData(messageQuery, {
     idField: "id",
   });
+
   //user input values
   const [userInput, setUserInput] = useState("");
 
@@ -61,7 +62,7 @@ export default function ChatRoom() {
             <ChatMessage key={index} message={msg} />
           ))}
       </div>
-      <form onSubmit={sendMessage}>
+      <form className="form-message-space" onSubmit={sendMessage}>
         <input
           type="text"
           value={userInput}

@@ -95,36 +95,30 @@ input {
 }
 
 .signInBtn {
-  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
-  border: 0;
-  border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: flex;
-  font-family: Phantomsans, sans-serif;
-  font-size: 20px;
-  justify-content: center;
-  line-height: 1em;
-  max-width: 100%;
-  min-width: 140px;
-  padding: 3px;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  cursor: pointer;
-}
+  border: thin solid;
+  background-color: rgba(255, 255, 255, 0.836);
+  color: #000000;
+  padding-right: 30px;
+  padding-left: 34px;
+  line-height: inherit;
+  font-size: large;
 
+  border-radius: var(--btn-border-radius, calc(48px / 2));
+  min-height: 48px;
+  padding: 13px 20px;
+
+  /* background: url("https://ir.ebaystatic.com/rs/c/sgninui-src-static-images-google-logo-icon-PNG-Transparent-Background-Z_TFsqo3.png"); */
+  background-image: url("https://ir.ebaystatic.com/rs/c/sgninui-src-static-images-google-logo-icon-PNG-Transparent-Background-Z_TFsqo3.png");
+  background-size: 45px;
+}
 .signInButton {
   display: flex;
   justify-content: center;
+  margin-top: 300px;
 }
 
 .sign-in {
-  color: #282c34;
-  background: white;
+  background-color: white;
   max-width: 400px;
   margin: 0 auto;
 }

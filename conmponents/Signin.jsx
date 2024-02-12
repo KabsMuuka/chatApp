@@ -32,7 +32,7 @@ export default function Signin() {
       </span>
       <div className="signInButton">
         <button className="signInBtn" onClick={signInWithGoogle}>
-          SignIn
+          Continue with Google
         </button>
       </div>
     </>

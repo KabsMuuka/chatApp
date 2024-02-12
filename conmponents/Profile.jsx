@@ -26,30 +26,30 @@ export default function Profile() {
   const auth = getAuth(firebaseApp);
 
   // FIREBASE DATABASE
-  const firestore = getFirestore();
+  // const firestore = getFirestore();
 
-  //connect to the database collection/table
-  const databaseCollection = collection(firestore, "userInformation");
+  // //connect to the database collection/table
+  // const databaseCollection = collection(firestore, "userInformation");
 
-  const Query = query(databaseCollection);
+  // const Query = query(databaseCollection);
 
-  //real time communication with firebase database Collection
-  const [Bios] = useCollectionData(Query, {
-    idField: "id",
-  });
+  // //real time communication with firebase database Collection
+  // const [Bios] = useCollectionData(Query, {
+  //   idField: "id",
+  // });
 
   const [userBios, setBios] = useState(""); //user input bios
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { uid } = auth.currentUser;
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const { uid } = auth.currentUser;
 
-    addDoc(Query, {
-      text: userBios,
-      uid,
-    });
-    setBios("");
-  };
+  //   addDoc(Query, {
+  //     text: userBios,
+  //     uid,
+  //   });
+  //   setBios("");
+  // };
   return (
     <>
       <div className="profile-grid-container">

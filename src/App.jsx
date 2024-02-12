@@ -30,9 +30,9 @@ export default function App() {
   return (
     <>
       <div className="App">
-        <header>{user ? <Header /> : ""}</header>
+        <header>{user ? <Header /> : " "}</header>
         <Routes>
-          <Route path="/" element={<Signin />}></Route>
+          <Route path="/" element={user ? <ChatRoom /> : <Signin />}></Route>
 
           <Route
             path="/ChatRoom"

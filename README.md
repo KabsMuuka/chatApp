@@ -10,7 +10,7 @@ drop down menu
 <img src="./public/dropdown.png"/>
 ...
 User profile
-<img src="./public/dropdown.png"/>
+<img src="./public/profile.png"/>
 ...
 
 Framework: React <br>

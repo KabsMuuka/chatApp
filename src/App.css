@@ -1,6 +1,3 @@
-body {
-  background-color: #282c34;
-}
 .Top-Header {
   background-color: #0b93f6;
 }
@@ -29,16 +26,17 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-color: #282535;
+  /* background-color: #282535; */
 }
 .message-container {
   padding-top: 55px;
   padding-bottom: 55px;
+  background-color: gray;
 }
 
 .Note {
   margin: 50px;
-  color: white;
+  color: black;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: large;
@@ -81,20 +79,41 @@ main::-webkit-scrollbar-thumb {
   border: none;
   cursor: pointer;
   border-radius: 4px;
+  background-color: #0000;
 }
 
 input {
   line-height: 1.5;
   width: 100%;
   font-size: 1.2rem;
-  background: rgb(58, 58, 58);
+  background: rgb(37, 35, 35);
   color: white;
   outline: none;
   border: none;
   padding: 0 10px;
 }
 
-.signInBtn {
+.Div-signInButton-G {
+  display: flex;
+  justify-content: center;
+  margin-top: 300px;
+}
+
+.signInBtn-for-G::before {
+  content: ""; /* Adding empty content */
+  display: inline-block; /* Ensuring the pseudo-element is displayed */
+
+  position: relative;
+  top: 3px;
+  left: -40px;
+  width: 20px;
+  height: 20px;
+
+  background: url("https://ir.ebaystatic.com/rs/c/sgninui-src-static-images-google-logo-icon-PNG-Transparent-Background-Z_TFsqo3.png")
+    no-repeat;
+  background-size: 100%;
+}
+.signInBtn-for-G {
   border: thin solid;
   background-color: rgba(255, 255, 255, 0.836);
   color: #000000;
@@ -105,16 +124,41 @@ input {
 
   border-radius: var(--btn-border-radius, calc(48px / 2));
   min-height: 48px;
-  padding: 13px 20px;
-
-  /* background: url("https://ir.ebaystatic.com/rs/c/sgninui-src-static-images-google-logo-icon-PNG-Transparent-Background-Z_TFsqo3.png"); */
-  background-image: url("https://ir.ebaystatic.com/rs/c/sgninui-src-static-images-google-logo-icon-PNG-Transparent-Background-Z_TFsqo3.png");
-  background-size: 45px;
+  padding: 13px 50px;
+  cursor: pointer;
 }
-.signInButton {
+.Div-signInButton-fb {
   display: flex;
   justify-content: center;
   margin-top: 300px;
+}
+.signInBtn-for-fb::before {
+  content: ""; /* Adding empty content */
+  display: inline-block; /* Ensuring the pseudo-element is displayed */
+
+  position: relative;
+  top: 3px;
+  left: -40px;
+  width: 20px;
+  height: 20px;
+
+  background: url("https://ir.ebaystatic.com/rs/c/sgninui-src-static-images-FB-f-Logo__white_29-Nm8L0bDZ.png")
+    no-repeat;
+  background-size: 100%;
+}
+.signInBtn-for-fb {
+  border: thin solid;
+  background-color: rgba(68, 63, 161, 0.836);
+  color: #000000;
+  padding-right: 30px;
+  padding-left: 34px;
+  line-height: inherit;
+  font-size: large;
+
+  border-radius: var(--btn-border-radius, calc(48px / 2));
+  min-height: 48px;
+  padding: 13px 50px;
+  cursor: pointer;
 }
 
 .sign-in {
@@ -211,12 +255,12 @@ p {
 .profile-grid-container {
   display: grid;
   grid-template-rows: auto;
-  background-color: #373745;
+  background-color: gray;
   padding: 10px;
 }
 .grid-content {
-  border: 1px solid rgba(105, 82, 82, 0.8);
-  padding: 20px;
+  border: 1px solid rgba(165, 162, 162, 0.8);
+  padding: 50px;
   font-size: 30px;
   text-align: center;
 }

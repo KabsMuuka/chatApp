@@ -4,7 +4,8 @@ import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth"; //
 import { useAuthState } from "react-firebase-hooks/auth";
 
 //IMPORTS FROM COMPONENET
-import Signin from "../conmponents/Signin";
+import SiginWithGoogle from "../conmponents/SiginWithGoogle";
+import SignInWithFacebook from "../conmponents/SiginWithFaceBook";
 import ChatRoom from "../conmponents/ChatRoom";
 import Header from "../conmponents/Header";
 import Profile from "../conmponents/Profile";
@@ -32,16 +33,45 @@ export default function App() {
       <div className="App">
         <header>{user ? <Header /> : " "}</header>
         <Routes>
-          <Route path="/" element={user ? <ChatRoom /> : <Signin />}></Route>
-
+          <Route
+            path="/"
+            element={
+              user ? (
+                <ChatRoom />
+              ) : (
+                <>
+                  <SiginWithGoogle />
+                  <SignInWithFacebook />
+                </>
+              )
+            }
+          ></Route>
           <Route
             path="/ChatRoom"
-            element={user ? <ChatRoom /> : <Signin />}
+            element={
+              user ? (
+                <ChatRoom />
+              ) : (
+                <>
+                  <SiginWithGoogle />
+                  <SignInWithFacebook />
+                </>
+              )
+            }
           ></Route>
 
           <Route
             path="/Profile"
-            element={user ? <Profile /> : <Signin />}
+            element={
+              user ? (
+                <Profile />
+              ) : (
+                <>
+                  <SiginWithGoogle />
+                  <SignInWithFacebook />
+                </>
+              )
+            }
           ></Route>
         </Routes>
       </div>

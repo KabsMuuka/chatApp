@@ -9,6 +9,9 @@ Internal functionalities
 drop down menu
 <img src="./public/dropdown.png"/>
 ...
+User profile
+<img src="./public/dropdown.png"/>
+...
 
-Framework:  React <br>
+Framework: React <br>
 Firebase for authentication and real time database communication

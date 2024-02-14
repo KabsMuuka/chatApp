@@ -4,12 +4,12 @@ import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth"; //
 import { useAuthState } from "react-firebase-hooks/auth";
 
 //IMPORTS FROM COMPONENET
-import SiginWithGoogle from "../conmponents/SiginWithGoogle";
-import SignInWithFacebook from "../conmponents/SiginWithFaceBook";
+import SiginWithGoogle from "../conmponents/auth/SiginWithGoogle";
+import SignInWithFacebook from "../conmponents/auth/SiginWithFaceBook";
 import ChatRoom from "../conmponents/ChatRoom";
 import Header from "../conmponents/Header";
 import Profile from "../conmponents/Profile";
-
+import Footer from "../conmponents/Footer";
 import { Routes, Route } from "react-router-dom";
 
 const firebaseConfig = {
@@ -75,6 +75,8 @@ export default function App() {
           ></Route>
         </Routes>
       </div>
+
+      <span> {!user ? <Footer /> : ""} </span>
     </>
   );
 }

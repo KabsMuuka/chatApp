@@ -58,12 +58,12 @@ export default function Profile() {
         </div>
 
         <div className="grid-content">
-          <label htmlFor="">DisplayName: </label>{" "}
+          <label htmlFor="">Name: </label>{" "}
           <span>{auth.currentUser.displayName}</span>
         </div>
 
         <div className="grid-content">
-          <label htmlFor="">User Email: </label>{" "}
+          <label htmlFor="">Email: </label>{" "}
           <span>{auth.currentUser.email}</span>
         </div>
       </div>

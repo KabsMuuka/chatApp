@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import ChatRoom from "./ChatRoom";
+import ChatRoom from "../ChatRoom";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA9XTWy8rBAYYM-BMWTVlJYmp0ieaCliI0",

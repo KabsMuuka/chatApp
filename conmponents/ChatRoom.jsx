@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore"; //database
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { useState } from "react";
+import SidBar from "./SidBar";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA9XTWy8rBAYYM-BMWTVlJYmp0ieaCliI0",
@@ -51,8 +52,15 @@ export default function ChatRoom() {
     });
     setUserInput("");
   };
+
   return (
     <>
+      {/* <span className="sidBar-grid-container">
+        {messages &&
+          messages.map((userMsg, index) => (
+            <SidBar key={index} MessageInfor={userMsg} />
+          ))}
+      </span> */}
       <div className="message-container">
         {/* /* messages.map((msg) => ...) is a method that iterates over each element in the messages array.
              For each iteration, it executes the provided function, which returns a ChatMessage component.
@@ -62,6 +70,7 @@ export default function ChatRoom() {
             <ChatMessage key={index} message={msg} />
           ))}
       </div>
+
       <form className="form-message-space" onSubmit={sendMessage}>
         <input
           type="text"
@@ -90,8 +99,11 @@ export default function ChatRoom() {
           </p>
           <span className="timeStamp">
             {" "}
-            {createdAt && createdAt.toDate().toLocaleString()}{" "}
-          </span>{" "}
+            {/* to display data and time  */}
+            {/* {createdAt && createdAt.toDate().toLocaleString()} */}
+            {/* to display time alone */}
+            {createdAt && createdAt.toDate().toLocaleTimeString()}
+          </span>
         </div>
       </>
     );

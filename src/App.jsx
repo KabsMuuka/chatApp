@@ -7,6 +7,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import SiginWithGoogle from "../conmponents/auth/SiginWithGoogle";
 import SignInWithFacebook from "../conmponents/auth/SiginWithFaceBook";
 import ChatRoom from "../conmponents/ChatRoom";
+import SidBar from "../conmponents/SidBar";
 import Header from "../conmponents/Header";
 import Profile from "../conmponents/Profile";
 import Footer from "../conmponents/Footer";
@@ -40,8 +41,10 @@ export default function App() {
                 <ChatRoom />
               ) : (
                 <>
-                  <SiginWithGoogle />
-                  <SignInWithFacebook />
+                  <div className="Auth-container">
+                    <SiginWithGoogle />
+                    <SignInWithFacebook />
+                  </div>
                 </>
               )
             }
@@ -50,11 +53,16 @@ export default function App() {
             path="/ChatRoom"
             element={
               user ? (
-                <ChatRoom />
+                <>
+                  {/* <SidBar /> */}
+                  <ChatRoom />
+                </>
               ) : (
                 <>
-                  <SiginWithGoogle />
-                  <SignInWithFacebook />
+                  <div className="Auth-container">
+                    <SiginWithGoogle />
+                    <SignInWithFacebook />
+                  </div>
                 </>
               )
             }
@@ -67,8 +75,10 @@ export default function App() {
                 <Profile />
               ) : (
                 <>
-                  <SiginWithGoogle />
-                  <SignInWithFacebook />
+                  <div className="Auth-container">
+                    <SiginWithGoogle />
+                    <SignInWithFacebook />
+                  </div>
                 </>
               )
             }

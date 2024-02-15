@@ -9,7 +9,7 @@ import {
   serverTimestamp,
 } from "firebase/firestore"; //database
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SidBar from "./SidBar";
 
 const firebaseConfig = {
@@ -89,6 +89,16 @@ export default function ChatRoom() {
     const { text, uid, senderName, createdAt } = props.message;
     const messageClass = uid === auth.currentUser.uid ? "sent" : "received";
     const displaySenderName = uid === auth.currentUser.uid ? "You" : senderName;
+
+    const messageContainerReference = useRef(null);
+    useEffect(() => {
+      if (messageContainerReference.current) {
+        messageContainerReference.current.scroll({
+          top: messageContainerReference.current.scrollHeight,
+          behavoir: "smooth",
+        });
+      }
+    }, [props.message]);
 
     return (
       <>

@@ -4,13 +4,12 @@ Login page
 <img src="./public/login.png"/>
 
 Internal functionalities
-<img src="./public/app.png"/>
+<img src="./public/app.jpg"/>
 
 drop down menu
 <img src="./public/dropdown.png"/>
 ...
-User profile
-<img src="./public/profile.png"/>
+
 ...
 
 Framework: React <br>

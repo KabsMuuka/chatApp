@@ -11,7 +11,6 @@ export default function Footer() {
               href="https://twitter.com/KabsMuuka"
               target="_blank"
             >
-              <label>Contacts: </label>{" "}
               <img src="/twitter.png" width={30} alt="" />
             </a>
             <a

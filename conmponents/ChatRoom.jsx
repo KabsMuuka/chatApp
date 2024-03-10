@@ -10,7 +10,6 @@ import {
 } from "firebase/firestore"; //database
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { useEffect, useRef, useState } from "react";
-import SidBar from "./SidBar";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA9XTWy8rBAYYM-BMWTVlJYmp0ieaCliI0",
@@ -62,9 +61,6 @@ export default function ChatRoom() {
           ))}
       </span> */}
       <div className="message-container">
-        {/* /* messages.map((msg) => ...) is a method that iterates over each element in the messages array.
-             For each iteration, it executes the provided function, which returns a ChatMessage component.
-             The key={msg.id} prop is used to uniquely identify each ChatMessage */}
         {messages &&
           messages.map((msg, index) => (
             <ChatMessage key={index} message={msg} />
@@ -72,14 +68,14 @@ export default function ChatRoom() {
       </div>
 
       <form className="form-message-space" onSubmit={sendMessage}>
-        <input
+        <textarea
           type="text"
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
         />
         <button type="submit">
           {" "}
-          <img className="micro-img" src="/send-message.png" alt="" />{" "}
+          <img className="micro-img" src="/up-arrow....png" alt="" />{" "}
         </button>
       </form>
     </>

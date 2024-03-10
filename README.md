@@ -4,7 +4,7 @@ Login page
 <img src="./public/login.png"/>
 
 Internal functionalities
-<img src="./public/app.jpg"/>
+<img src="./public/app.png"/>
 
 drop down menu
 <img src="./public/dropdown.png"/>
